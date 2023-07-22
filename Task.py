@@ -26,10 +26,10 @@ def count_distinct_numbers(starting_position, hops):
         return total_numbers
 
     return count_numbers(starting_position, hops)
-
-
-# Test the function
-starting_position = 1
-hops = 3
+    
+# Function test
+starting_position = 0
+hops = 10
 distinct_numbers = count_distinct_numbers(starting_position, hops)
 print(f"The number of distinct numbers dialed in {hops} hops from position {starting_position} is: {distinct_numbers}")
+
