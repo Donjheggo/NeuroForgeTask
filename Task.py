@@ -13,3 +13,23 @@ def count_distinct_numbers(starting_position, hops):
         0: [4, 6]
     }
 
+    # Recursive function to count distinct numbers
+    def count_numbers(position, remaining_hops):
+        if remaining_hops == 0:
+            return 1
+
+        total_numbers = 0
+
+        for move in digit_moves[position]:
+            total_numbers += count_numbers(move, remaining_hops - 1)
+
+        return total_numbers
+
+    return count_numbers(starting_position, hops)
+
+
+# Test the function
+starting_position = 1
+hops = 3
+distinct_numbers = count_distinct_numbers(starting_position, hops)
+print(f"The number of distinct numbers dialed in {hops} hops from position {starting_position} is: {distinct_numbers}")
